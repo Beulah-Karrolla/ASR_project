@@ -50,10 +50,10 @@ train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
     save_file: !ref <train_log>
 
 # Training parameters
-number_of_epochs: 15
+number_of_epochs: 40
 number_of_ctc_epochs: 5
-batch_size: 8
-lr: 1.0
+batch_size: 32
+lr: 0.25
 ctc_weight: 0.5
 sorting: ascending
 ckpt_interval_minutes: 15 # save checkpoint every N min
@@ -99,8 +99,8 @@ eos_index: 0
 # Decoding parameters
 min_decode_ratio: 0.0
 max_decode_ratio: 1.0
-valid_beam_size: 8
-test_beam_size: 80
+valid_beam_size: 64
+test_beam_size: 64
 eos_threshold: 1.5
 using_max_attn_shift: True
 max_attn_shift: 240

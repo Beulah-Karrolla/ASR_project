@@ -14,9 +14,9 @@ from speechbrain.utils.data_utils import get_all_files, download_file
 from speechbrain.dataio.dataio import read_audio
 
 logger = logging.getLogger(__name__)
-MINILIBRI_TRAIN_URL = "http://www.openslr.org/resources/31/train-clean-5.tar.gz"
-MINILIBRI_VALID_URL = "http://www.openslr.org/resources/31/dev-clean-2.tar.gz"
-MINILIBRI_TEST_URL = "https://www.openslr.org/resources/12/test-clean.tar.gz"
+MINILIBRI_TRAIN_URL = "http://us.openslr.org/resources/31/train-clean-5.tar.gz"
+MINILIBRI_VALID_URL = "http://us.openslr.org/resources/31/dev-clean-2.tar.gz"
+MINILIBRI_TEST_URL = "https://us.openslr.org/resources/12/test-clean.tar.gz"
 SAMPLERATE = 16000
 
 
@@ -185,3 +185,12 @@ def download_mini_librispeech(destination):
     shutil.unpack_archive(train_archive, destination)
     shutil.unpack_archive(valid_archive, destination)
     shutil.unpack_archive(test_archive, destination)
+
+def main():
+    data_folder = "/users/PAS2400/bkarrolla1/ASR_project/data"
+    print("yayy")
+    prepare_mini_librispeech(data_folder, "train.json", "valid.json", "test.json")
+    print("Any progress??")
+
+if __name__=="__main__":
+    main()
